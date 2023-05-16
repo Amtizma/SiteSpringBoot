@@ -1,0 +1,121 @@
+.backgroundimgdiv{
+    position: fixed;
+    filter: blur(5px);
+    z-index: 0;
+    width: 100%;
+    height:100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.basediv{
+    position: relative;
+    z-index: 1;
+    width: 77%;
+    height: 100%;
+    margin: 0 auto;
+    background: dimgray;
+}
+.logodiv img{
+    width: 90%;
+}
+.upperdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: dimgray;
+   }
+.logodiv{
+    width: 27%;
+    padding: 10px;
+}
+
+.selectplatformdiv{
+    vertical-align: top;
+    width: 42%;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+.searchdiv{
+    vertical-align: top;
+    margin-right: 2%;
+    width: 20%;
+}
+#searchinput{
+    width: 100%;
+    text-align: center;
+    border-radius: 20px;
+}
+#allgamesbutton{
+    background-color: transparent;
+    border:none;
+    position: relative;
+    background-image: url("/IMG/grid.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 30px;
+    height: 50px;
+    margin-left: 10px;
+}
+#allgamesbutton, #pcbutton, #playstationbutton, #xboxbutton:hover{
+    cursor: pointer;
+}
+#pcbutton{
+    background-color: transparent;
+    border:none;
+    position: relative;
+    background-image: url("/IMG/computer.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 30px;
+    height: 50px;
+    margin-left: 10px;
+
+}
+#playstationbutton{
+    background-color: transparent;
+    border:none;
+    position: relative;
+    background-image: url("/IMG/playstation-logotype.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 15px;
+    height: 50px;
+    margin-left: 10px;
+
+}
+#xboxbutton{
+    background-color: transparent;
+    border:none;
+    position: relative;
+    background-image: url("/IMG/xbox-logo.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: 30px;
+    height: 50px;
+    margin-left: 10px;
+
+}
+#allgamesbutton, #playstationbutton, #xboxbutton, #pcbutton{
+    width: 15vh;
+}
+@media (max-width: 1537px){
+    #xboxbutton{
+        background-position-x: 15px;
+    }
+    #playstationbutton{
+        background-position-x: 0px;
+    }
+    #pcbutton{
+        background-position-x: 20px;
+    }
+    #allgamesbutton{
+        background-position-x: 20px;
+    }
+}

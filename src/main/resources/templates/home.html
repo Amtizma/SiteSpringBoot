@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adnosius Games</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/reusable.css">
+    <link rel="stylesheet" type="text/css" href="/CSS/home.css">
+    <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/slick/slick.min.js"></script>
+    <script type="text/javascript" src="/JS/home.js"></script>
+    <script type="text/javascript" src="/JS/platformbuttons.js"></script>
+</head>
+<body>
+<div class = "backgroundimgdiv">
+    <img src="/IMG/625497.jpg" width="100%" height="100%">
+</div>
+<div class = "basediv">
+    <div class = upperdiv>
+        <div class = "logodiv">
+            <a href = "http://localhost:8080">
+            <img src="/IMG/Adnosius.png">
+            </a>
+        </div>
+        <div class = "selectplatformdiv">
+            <button id = "allgamesbutton" onclick="redirectToAllGames()">All</button>
+            <button id = "pcbutton" onclick="redirectToPCGames()">PC</button>
+            <button id = "playstationbutton" onclick="redirectToPlaystationGames()">Playstation</button>
+            <button id = "xboxbutton" onclick="redirectToXboxGames()">Xbox</button>
+        </div>
+        <div class = "searchdiv">
+            <label for="searchinput"></label>
+            <input id = "searchinput" placeholder="Search your favorite game...">
+        </div>
+    </div>
+    <div id = "promodiv">
+        <div><img src="/IMG/lotr-gollum2.webp"></div>
+        <div><img src="/IMG/atomic_heart_r.webp"></div>
+        <div><img src="/IMG/hogwarts-ps4-xboxone.webp"></div>
+    </div>
+    <div id = "genrediv">
+        <div class = "genreicons" onclick="redirectToActionGames()">
+            <div id = "actiondiv" class = "genre">
+            <img src="/IMG/fighting.png" width="90" height="80">
+            <span>Action</span>
+            </div>
+        </div>
+        <div class = "genreicons" onclick="redirectToAdventureGames()">
+                <div id = "adventurediv" class = "genre">
+                <img src="/IMG/adventurer.png" width="90" height="80">
+                <span>Adventure</span>
+                </div>
+        </div>
+        <div class = "genreicons" onclick="redirectToRPGGames()">
+                <div id = "rpgdiv" class = "genre">
+                    <img src="/IMG/rpg-game.png" width="90" height="80">
+                    <span>RPG</span>
+                </div>
+        </div>
+        <div class = "genreicons" onclick="redirectToShooterGames()">
+                <div id = "shooterdiv" class = "genre">
+                    <img src="/IMG/shoot.png" width="90" height="80">
+                    <span>Shooter</span>
+                </div>
+        </div>
+        <div class = "genreicons" onclick="redirectToSportsCarsGames()">
+                <div id = "sportscarsdiv" class = "genre">
+                    <img src="/IMG/fans.png" width="90" height="80">
+                    <span>Sports/Cars</span>
+                </div>
+        </div>
+        <div class = "genreicons" onclick="redirectToOnlineGames()">
+                <div id = "onlinediv" class = "genre">
+                    <img src="/IMG/online-game.png" width="90" height="80">
+                    <span>Online</span>
+                </div>
+        </div>
+        <div class = "genreicons" onclick="redirectToSimulatorGames()">
+                <div id = "simulatorsdiv" class = "genre">
+                    <img src="/IMG/simulator.png" width="90" height="80">
+                    <span>Simulators</span>
+                </div>
+        </div>
+        <div class = "genreicons" onclick="redirectToStrategyGames()">
+                <div id = "strategydiv" class = "genre">
+                    <img src="/IMG/chess.png" width="90" height="80">
+                    <span>Strategy</span>
+                </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

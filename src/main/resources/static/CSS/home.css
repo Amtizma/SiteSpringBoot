@@ -1,0 +1,34 @@
+#promodiv img{
+    width: 100%;
+}
+#promodiv{
+}
+
+.genreicons{
+    display: inline-block;
+    width: 20%;
+    margin-left: 3.6%;
+    cursor: pointer;
+}
+.genre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    font-family: "Times New Roman", serif;
+    font-size: 24px;
+
+}
+#genrediv{
+}
+
+#adventurediv, #rpgdiv, #actiondiv, #shooterdiv{
+    border: 2px solid black;
+}
+
+#sportscarsdiv, #onlinediv, #simulatorsdiv, #strategydiv{
+    margin-top: 20px;
+    padding-bottom: 3%;
+    border: 2px solid black;
+
+}

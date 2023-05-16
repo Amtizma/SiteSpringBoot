@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Games</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/reusable.css">
+    <link rel="stylesheet" type="text/css" href="/CSS/allgames.css">
+    <script type="text/javascript" src="/JS/platformbuttons.js"></script>
+    <script type="text/javascript" src="/JS/filters.js"></script>
+
+
+</head>
+<body>
+<div class = "backgroundimgdiv">
+  <img src="/IMG/625497.jpg" width="100%" height="100%">
+</div>
+<div class = "basediv">
+  <div class = upperdiv>
+        <div class = "logodiv">
+            <a href = "http://localhost:8080">
+            <img src="/IMG/Adnosius.png">
+            </a>
+        </div>
+    <div class = "selectplatformdiv">
+      <button id = "allgamesbutton" onclick="redirectToAllGames()"> All </button>
+      <button id = "pcbutton" onclick="redirectToPCGames()">PC</button>
+      <button id = "playstationbutton" onclick="redirectToPlaystationGames()">Playstation</button>
+      <button id = "xboxbutton" onclick="redirectToXboxGames()">Xbox</button>
+    </div>
+    <div class = "searchdiv">
+      <label for="searchinput"></label>
+      <input id = "searchinput" placeholder="Search your favorite game...">
+    </div>
+  </div>
+    <div id = "wrapper">
+        <div id = "filterdiv">
+            <div id = "filterbygenre">
+                <label id = "filtergenrelabel">GENRE</label>
+                <div id = "filtergenrevalues">
+                    <span onclick="filterByGenre(this)">Action</span>
+                    <span onclick="filterByGenre(this)">Adventure</span>
+                    <span onclick="filterByGenre(this)">RPG</span>
+                    <span onclick="filterByGenre(this)">Shooter</span>
+                    <span onclick="filterByGenre(this)">Sports/Cars</span>
+                    <span onclick="filterByGenre(this)">Online</span>
+                    <span onclick="filterByGenre(this)">Simulator</span>
+                    <span onclick="filterByGenre(this)">Strategy</span>
+                </div>
+            </div>
+        </div>
+  <div id="allgamesdiv">
+     <div class = "game" th:each="game : ${gamesList}">
+         <div class = "gameimgdiv">
+             <img th:src="@{|${game.image}|}" alt="Game image">
+         </div>
+         <div class = "gamenamediv">
+             <span th:text="${game.name}"></span>
+         </div>
+         <div class = "gamepricediv">
+             <span th:text="${game.price} + Lei"> </span>
+         </div>
+     </div>
+     <!--
+     <div class = "game">
+         <div class = "gameimgdiv">
+             <img src="/IMG/fifa23ps5.jpg" alt="Game image">
+         </div>
+         <div class = "gamenamediv">
+             <span> FIFA 23</span>
+         </div>
+         <div class = "gamepricediv">
+             <span> 50$</span>
+         </div>
+         <div class = "gameplatformdiv">
+             <span> PS5, XBOX, PC</span>
+         </div>
+     </div>
+     <div class = "game">
+         <div class = "gameimgdiv">
+             <img src="/IMG/fifa23ps5.jpg" alt="Game image">
+         </div>
+         <div class = "gamenamediv">
+             <span> FIFA 23</span>
+         </div>
+         <div class = "gamepricediv">
+             <span> 50$</span>
+         </div>
+         <div class = "gameplatformdiv">
+             <span> PS5, XBOX, PC</span>
+         </div>
+     </div>
+     <div class = "game">
+         <div class = "gameimgdiv">
+             <img src="/IMG/fifa23ps5.jpg" alt="Game image">
+         </div>
+         <div class = "gamenamediv">
+             <span> FIFA 23</span>
+         </div>
+         <div class = "gamepricediv">
+             <span> 50$</span>
+         </div>
+         <div class = "gameplatformdiv">
+             <span> PS5, XBOX, PC</span>
+         </div>
+     </div>
+     <div class = "game">
+         <div class = "gameimgdiv">
+             <img src="/IMG/fifa23ps5.jpg" alt="Game image">
+         </div>
+         <div class = "gamenamediv">
+             <span> FIFA 23</span>
+         </div>
+         <div class = "gamepricediv">
+             <span> 50$</span>
+         </div>
+         <div class = "gameplatformdiv">
+             <span> PS5, XBOX, PC</span>
+         </div>
+     </div>
+       -->
+  </div>
+</div>
+</div>
+</body>
+</html>

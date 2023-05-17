@@ -30,3 +30,4 @@ function redirectToSimulatorGames() {
 function redirectToStrategyGames() {
     window.location.href = "/allgames?genre=Strategy";
 }
+

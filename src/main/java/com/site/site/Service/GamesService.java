@@ -30,4 +30,9 @@ public class GamesService {
    public List<Games> findAllByGenre(@RequestParam(name = "genre", required = false) String genre, String platform){
         return gamesRepository.getAllByGenreAndPlatform(genre, platform);
     }
+
+    public List<Games> findAllByName(@RequestParam(name = "name", required = false) String name){
+        return gamesRepository.findAllByName(name);
+    }
+
 }

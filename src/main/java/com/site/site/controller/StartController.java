@@ -4,6 +4,7 @@ import com.site.site.Service.GamesService;
 import com.site.site.entity.Games;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,9 +23,6 @@ public class StartController {
     public StartController(GamesService gamesService) {
         this.gamesService = gamesService;
     }
-
-    @GetMapping
-    public List<Games> getAllGames(){return gamesService.getAllGames();}
 
     @GetMapping("/{id}")
     public Games getGame(@PathVariable("id") Long ID){return gamesService.getGame(ID);}

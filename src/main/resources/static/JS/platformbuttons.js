@@ -10,3 +10,6 @@ function redirectToXboxGames() {
 function redirectToPlaystationGames() {
     window.location.href = "/ps";
 }
+function searchGame(){
+    window.location.href = "/allgames?name="+document.getElementById("searchinput").value;
+}

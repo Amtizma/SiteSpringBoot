@@ -20,10 +20,13 @@ public class AllGamesController {
     }
 
     @RequestMapping("/allgames")
-    public String allgames(Model model, @RequestParam(name = "genre", required = false) String genre){
+    public String allgames(Model model, @RequestParam(name = "genre", required = false) String genre, @RequestParam(name = "name", required = false) String name){
         List<Games> gamesList = null;
         if(genre !=null && !genre.isEmpty()){
             gamesList = gamesService.findAllByGenre(genre, "");
+        }
+        else if(name !=null && !name.isEmpty()){
+            gamesList = gamesService.findAllByName(name);
         }
         else{
             gamesList = gamesService.getAllGames();

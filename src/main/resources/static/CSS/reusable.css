@@ -39,6 +39,7 @@ body{
 }
 
 .searchdiv{
+    display: flex;
     vertical-align: top;
     margin-right: 2%;
     width: 20%;
@@ -47,6 +48,18 @@ body{
     width: 100%;
     text-align: center;
     border-radius: 20px;
+
+}
+#searchbutton{
+    background-image: url("/IMG/loupe.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border:none;
+    width: 20px;
+    height: 20px;
+    margin-left: 1%;
+    cursor: pointer;
 }
 #allgamesbutton{
     background-color: transparent;

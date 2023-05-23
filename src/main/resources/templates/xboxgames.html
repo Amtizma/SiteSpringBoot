@@ -5,9 +5,9 @@
   <title>Xbox Games</title>
   <link rel="stylesheet" type="text/css" href="/CSS/reusable.css">
   <link rel="stylesheet" type="text/css" href="/CSS/allgames.css">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script type="text/javascript" src="/JS/platformbuttons.js"></script>
   <script type="text/javascript" src="/JS/filters.js"></script>
-
 
 </head>
 <body>
@@ -50,12 +50,26 @@
       </div>
     </div>
     <div id="allgamesdiv">
-      <div class = "game" th:each="game : ${xboxgames}">
+      <div id = "titlediv">
+        <label id = "title"> Xbox Games</label>
+      </div>
+      <div id = sortdiv>
+        <select id = "sortoptions">
+          <option value="Implicit" onclick="sortDefault()">Implicit</option>
+          <option value="Nume cresc" onclick="sortByNameASC()">Nume cresc</option>
+          <option value="Nume desc" onclick="sortByNameDESC()">Nume desc</option>
+          <option value="Pret crescator" onclick="sortByPriceASC()">Pret crescator</option>
+          <option value="Pret descrescator" onclick="sortByPriceDESC()">Pret descrescator</option>
+          <option value="Data lansare cresc" onclick="sortByReleaseDateASC()">Data lansare cresc</option>
+          <option value="Data lansare desc" onclick="sortByReleaseDateDESC()">Data lansare desc</option>
+        </select>
+      </div>
+      <div class = "game" th:each="game : ${xboxgames}" onclick="redirectToGamePage(this)">
         <div class = "gameimgdiv">
           <img th:src="@{|${game.image}|}" alt="Game image">
         </div>
         <div class = "gamenamediv">
-          <span th:text="${game.name}"></span>
+          <span class = "gamename" th:text="${game.name}"></span>
         </div>
         <div class = "gamepricediv">
           <span th:text="${game.price} + Lei"> </span>

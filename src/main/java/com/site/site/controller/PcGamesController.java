@@ -22,10 +22,40 @@ public class PcGamesController {
     private final GamesService gamesService;
 
     @RequestMapping("/pc")
-    public String pcGames(Model model, @RequestParam(name = "genre", required = false) String genre){
+    public String pcGames(Model model, @RequestParam(name = "genre", required = false) String genre, @RequestParam(name = "filter", required = false)String filter, @RequestParam(name = "sortOrder", required = false) String sortOrder){
         List<Games> pcGames = null;
-        if(genre != null && !genre.isEmpty()){
-            pcGames = gamesService.findAllByGenre(genre, "PC");
+        if(genre !=null && !genre.isEmpty()){
+            if(filter!=null && !filter.isEmpty()) {
+                if(sortOrder.equals("ASC")) {
+                    switch (filter) {
+                        case("price") -> pcGames = gamesService.orderByPriceAsc("PC", genre);
+                        case("name") -> pcGames = gamesService.orderByNameAsc("PC", genre);
+                        case("releaseDate") -> pcGames = gamesService.orderByReleaseDateAsc("PC", genre);
+                    }
+                }
+                else {
+                    switch (filter) {
+                        case("price") -> pcGames = gamesService.orderByPriceDesc("PC", genre);
+                        case("name") -> pcGames = gamesService.orderByNameDesc("PC", genre);
+                        case("releaseDate") -> pcGames = gamesService.orderByReleaseDateDesc("PC", genre);
+                    }
+                }
+            }
+            else pcGames = gamesService.findAllByGenre(genre, "PC");
+        } else if (filter != null && !filter.isEmpty()) {
+            if (sortOrder.equals("ASC")) {
+                switch (filter) {
+                    case "price" -> pcGames = gamesService.orderPlatByPriceAsc("PC");
+                    case "name" -> pcGames = gamesService.orderPlatByNameAsc("PC");
+                    case "releaseDate" -> pcGames = gamesService.orderPlatByReleaseDateAsc("PC");
+                };
+            } else {
+                switch (filter) {
+                    case "price" -> pcGames = gamesService.orderPlatByPriceDesc("PC");
+                    case "name" -> pcGames = gamesService.orderPlatByNameDesc("PC");
+                    case "releaseDate" -> pcGames = gamesService.orderPlatByReleaseDateDesc("PC");
+                };
+            }
         }
         else pcGames = gamesService.findAllByPlatform("PC");
         model.addAttribute("pcgames", pcGames);

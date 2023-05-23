@@ -1,0 +1,72 @@
+#gamecontent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#gamezone{
+    background: white;
+    text-align: center;
+}
+#gamename{
+    margin-top: 3%;
+    font-family: "Times New Roman", serif;
+    font-size: 32px;
+}
+#gameimage{
+    left: 0;
+    margin-left: 5%;
+}
+#image{
+   margin: 0 auto;
+}
+.flex-container {
+    margin-top: 6%;
+    display: flex;
+    width: 100%;
+    padding-bottom: 4%;
+}
+#priceandbuy{
+    width: 100%;
+    margin-left: 15%;
+}
+#buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#buybutton{
+    font-family: "Times New Roman", serif;
+    font-size: 5vh;
+    width: 60%;
+    height: 10vh;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin-top: 10%;
+    background-image: url("/IMG/sale.png");
+    background-size: 6vh;
+    background-position: left;
+    background-position-x: 1vh;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+#addtocartbutton{
+    font-family: "Times New Roman", serif;
+    font-size: 5vh;
+    width: 60%;
+    height: 10vh;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin-top: 10%;
+    background-image: url("/IMG/cart.png");
+    background-size: 6vh;
+    background-position-x: 1vh;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+#gameprice{
+    font-family: "Times New Roman", serif;
+    font-size: 30px;
+    color: red;
+}

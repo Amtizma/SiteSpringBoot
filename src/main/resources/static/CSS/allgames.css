@@ -10,6 +10,12 @@
     padding: 1%;
     text-align: center;
     margin-left: 1%;
+    transition: box-shadow .3s;
+}
+.game:hover{
+    cursor: pointer;
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+
 }
 .game img{
     width: 70%;
@@ -49,4 +55,25 @@
 }
 #wrapper{
     display: flex;
+}
+#sortdiv{
+    display: flex;
+    justify-content: right;
+}
+#sortoptions{
+    padding: 1%;
+    margin: 2%;
+    border-radius: 15px;
+    background: transparent;
+    text-align: center;
+    border: 1px solid black;
+}
+#titlediv{
+    display: flex;
+    justify-content: center;
+}
+#title{
+    margin-top: 1%;
+    font-family: "Times New Roman", serif;
+    font-size: 30px;
 }

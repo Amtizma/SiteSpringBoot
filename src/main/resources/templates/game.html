@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Games</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/reusable.css">
+    <link rel="stylesheet" type="text/css" href="/CSS/game.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="/JS/platformbuttons.js"></script>
+</head>
+<body>
+<div class = "backgroundimgdiv">
+    <img src="/IMG/625497.jpg" width="100%" height="100%">
+</div>
+<div class = "basediv">
+    <div class = upperdiv>
+        <div class = "logodiv">
+            <a href = "http://localhost:8080">
+                <img src="/IMG/Adnosius.png">
+            </a>
+        </div>
+        <div class = "selectplatformdiv">
+            <button id = "allgamesbutton" onclick="redirectToAllGames()"> All </button>
+            <button id = "pcbutton" onclick="redirectToPCGames()">PC</button>
+            <button id = "playstationbutton" onclick="redirectToPlaystationGames()">Playstation</button>
+            <button id = "xboxbutton" onclick="redirectToXboxGames()">Xbox</button>
+        </div>
+        <div class = "searchdiv">
+            <label for="searchinput"></label>
+            <input id="searchinput" placeholder="Search your favorite game..."/>
+            <button id = "searchbutton" onclick="searchGame()"></button>
+        </div>
+    </div>
+    <div id = "gamezone">
+    <div id = "gamecontent" th:each = "game1 : ${game}">
+        <span id = "gamename" th:text = "${game1.name}"></span>
+        <div class = "flex-container">
+        <div id = "gameimage">
+            <img th:src="@{'/' + ${game1.image}}" width="600px" height="600px" id="image" alt="Game image">
+        </div>
+        <div id = "priceandbuy">
+            <span id = "gameprice" th:text = "${game1.price} + Lei"></span>
+            <div id = "buttons">
+                <button id = "buybutton"> Buy </button>
+                <button id = "addtocartbutton"> Add to cart </button>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>

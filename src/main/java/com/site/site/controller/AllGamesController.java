@@ -20,17 +20,46 @@ public class AllGamesController {
     }
 
     @RequestMapping("/allgames")
-    public String allgames(Model model, @RequestParam(name = "genre", required = false) String genre, @RequestParam(name = "name", required = false) String name){
+    public String allgames(Model model, @RequestParam(name = "genre", required = false) String genre, @RequestParam(name = "name", required = false) String name,  @RequestParam(name = "filter", required = false)String filter, @RequestParam(name = "sortOrder", required = false) String sortOrder){
         List<Games> gamesList = null;
-        if(genre !=null && !genre.isEmpty()){
-            gamesList = gamesService.findAllByGenre(genre, "");
-        }
-        else if(name !=null && !name.isEmpty()){
+        if (genre != null && !genre.isEmpty()) {
+            if (filter != null && !filter.isEmpty()) {
+                if (sortOrder.equals("ASC")) {
+                    switch (filter) {
+                        case "price" -> gamesList = gamesService.orderByPriceAsc("", genre);
+                        case "name" -> gamesList = gamesService.orderByNameAsc("", genre);
+                        case "releaseDate" -> gamesList = gamesService.orderByReleaseDateAsc("", genre);
+                    }
+                } else {
+                    switch (filter) {
+                        case "price" -> gamesList = gamesService.orderByPriceDesc("", genre);
+                        case "name" -> gamesList = gamesService.orderByNameDesc("", genre);
+                        case "releaseDate" -> gamesList = gamesService.orderByReleaseDateDesc("", genre);
+                    };
+                }
+            } else {
+                gamesList = gamesService.findAllByGenre(genre, "");
+            }
+        } else if (filter != null && !filter.isEmpty()) {
+            if (sortOrder.equals("ASC")) {
+                switch (filter) {
+                    case "price" -> gamesList = gamesService.orderPlatByPriceAsc("");
+                    case "name" -> gamesList = gamesService.orderPlatByNameAsc("");
+                    case "releaseDate" -> gamesList = gamesService.orderPlatByReleaseDateAsc("");
+                };
+            } else {
+                switch (filter) {
+                    case "price" -> gamesList = gamesService.orderPlatByPriceDesc("");
+                    case "name" -> gamesList = gamesService.orderPlatByNameDesc("");
+                    case "releaseDate" -> gamesList =gamesService.orderPlatByReleaseDateDesc("");
+                };
+            }
+        } else if (name != null && !name.isEmpty()) {
             gamesList = gamesService.findAllByName(name);
-        }
-        else{
+        } else {
             gamesList = gamesService.getAllGames();
         }
+
         model.addAttribute("gamesList", gamesList);
         return "allgames";
     }
